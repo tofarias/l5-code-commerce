@@ -7,9 +7,24 @@ use Illuminate\Http\Request;
 
 class AdminProductsController extends Controller {
 
-	public function index()
-	{
-		dd('index@AdminProductsController');
-	}
+    public function index()
+    {
+        dd('index@AdminProductsController');
+    }
+        
+    public function create()
+    {
+        dd('create@AdminProductsController');
+    }
+    
+    public function show($id)
+    {
+        dd('show@AdminProductsController');
+    }
+    
+    public function delete($id)
+    {
+        dd('delete@AdminProductsController');
+    }
 
 }
