@@ -4,6 +4,7 @@ use CodeCommerce\Http\Requests;
 use CodeCommerce\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use CodeCommerce\Product;
 
 class AdminProductsController extends Controller {
 
@@ -17,9 +18,13 @@ class AdminProductsController extends Controller {
         dd('create@AdminProductsController');
     }
     
-    public function show($id)
+    public function show($id = null)
     {
-        dd('show@AdminProductsController');
+    	$products = !is_null($id) ? Product::where('id', $id)->get() : Product::all();
+        
+        foreach ($products as $product) {
+        	echo $product->name.': $'.$product->price.'<br>';
+        }
     }
     
     public function delete($id)

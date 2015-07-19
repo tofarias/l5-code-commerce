@@ -4,6 +4,7 @@ use CodeCommerce\Http\Requests;
 use CodeCommerce\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use CodeCommerce\Category;
 
 class AdminCategoriesController extends Controller {
 
@@ -17,9 +18,13 @@ class AdminCategoriesController extends Controller {
         dd('create@AdminCategoriesController');
     }
     
-    public function show($id)
+    public function show($id = null)
     {
-        dd('show@AdminCategoriesController');
+        $categories = !is_null($id) ? Category::where('id', $id)->get() : Category::all();
+        
+        foreach ($categories as $category) {
+        	echo $category->name.'<br>';
+        }
     }
     
     public function delete($id)
