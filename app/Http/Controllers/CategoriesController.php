@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use CodeCommerce\Http\Requests;
 use CodeCommerce\Http\Controllers\Controller;
 use CodeCommerce\Category;
+use CodeCommerce\Http\Requests\CategoryRequest;
 
 class CategoriesController extends Controller
 {
@@ -28,7 +29,7 @@ class CategoriesController extends Controller
     	return view('categories.create');
     }
     
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
     	$input = $request->all();
     	
