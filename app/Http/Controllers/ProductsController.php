@@ -58,9 +58,29 @@ private $model;
     
 	public function update(ProductRequest $request, $id)
     {
-    	#dd( $request->all() );
     	$product = $this->model->find($id)->update($request->all());
     	 
     	return redirect()->route('products');
+    }
+    
+    public function images($id)
+    {
+    	$product = $this->model->find($id);
+    	
+    	return view('products.images', compact('product'));
+    }
+    
+    public function createImage($id)
+    {
+    	$product = $this->model->find($id);
+    	 
+    	return view('products.create_image', compact('product'));
+    }
+    
+    public function storeImage(Request $request, $id)
+    {
+    	$product = $this->model->find($id);
+    
+    	return view('products.create_image', compact('product'));
     }
 }
