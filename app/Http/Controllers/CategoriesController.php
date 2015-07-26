@@ -11,6 +11,6 @@ class CategoriesController extends Controller
 {
     public function index()
     {
-    	return 'Listagem de categorias';
+    	return view('categories.index');
     }
 }
