@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
 	
 		factory(User::class, 1)->create();
 		
-		factory(Category::class, 10)->create();
+		factory(Category::class, 4)->create();
 		
-		factory(Product::class, 50)->create();
+		factory(Product::class, 10)->create();
 		
 		Model::reguard();
 	}

@@ -27,7 +27,9 @@ $factory->define(Category::class, function($faker){
 		return[
 				'name' => $faker->name,
 				'description' => $faker->sentence,
-				'price' => $faker->randomFloat(2, $min = 2)
+				'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 10, $max = 99),
+				'featured' => $faker->boolean(),
+				'recommend' => $faker->boolean()
 		];
 	
 	});

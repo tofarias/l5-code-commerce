@@ -1,5 +1,12 @@
 <?php
 
+Route::get('products', ['as' => 'products', 'uses' => 'ProductsController@index']);
+Route::post('products', ['as' => 'products.store', 'uses' => 'ProductsController@store']);
+Route::get('products/create', ['as' => 'products.create', 'uses' => 'ProductsController@create']);
+Route::get('products/{id}/destroy', ['as' => 'products.destroy', 'uses' => 'ProductsController@destroy']);
+Route::get('products/{id}/edit', ['as' => 'products.edit', 'uses' => 'ProductsController@edit']);
+Route::post('products/{id}/update', ['as' => 'products.update', 'uses' => 'ProductsController@update']);
+
 Route::get('categories', ['as' => 'categories', 'uses' => 'CategoriesController@index']);
 Route::post('categories', ['as' => 'categories.store', 'uses' => 'CategoriesController@store']);
 Route::get('categories/create', ['as' => 'categories.create', 'uses' => 'CategoriesController@create']);
