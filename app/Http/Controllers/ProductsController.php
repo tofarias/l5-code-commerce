@@ -20,7 +20,7 @@ private $model;
     }
     public function index()
     {
-    	$products = $this->model->all();
+    	$products = $this->model->paginate(10);
     	
     	return view('products.index', compact('products'));
     }

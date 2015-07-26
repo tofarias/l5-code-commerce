@@ -25,7 +25,7 @@
 			<td>{{ $product->name }}</td>
 			<td>{{ $product->description }}</td>
 			<td>{{ $product->price }}</td>
-			<td> {{ $product->featured == 0 ? 'No' : 'Yes' }}</td>
+			<td>{{ $product->featured == 0 ? 'No' : 'Yes' }}</td>
 			<td>{{ $product->recommend == 0 ? 'No' : 'Yes' }}</td>
 			<td>{{ $product->category->name }}</td>
 			<td>
@@ -36,5 +36,8 @@
 		@endforeach
 		
 	</table>
+	
+	{!! $products->render() !!}
+	
 </div>
 @endsection
