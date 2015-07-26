@@ -1,5 +1,6 @@
 <?php
 
+Route::get('/categories', 'CategoriesController@index');
 
 Route::get('/', 'WelcomeController@index');
 
