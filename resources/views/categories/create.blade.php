@@ -5,7 +5,7 @@
 <div class="container">
 	<h1>Create Categorie</h1>
 	
-	{!! Form::open() !!}
+	{!! Form::open( ['url' => 'categories'] ) !!}
 		
 		<div class="form-group">
 			{!! Form::label('name', 'Name:') !!}

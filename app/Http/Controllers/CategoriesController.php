@@ -10,8 +10,7 @@ use CodeCommerce\Category;
 
 class CategoriesController extends Controller
 {
-	private $categoryModel;
-	
+	private $categoryModel;	
     
     public function __construct(Category $categoryModel)
     {
@@ -27,5 +26,15 @@ class CategoriesController extends Controller
     public function create()
     {
     	return view('categories.create');
+    }
+    
+    public function store(Request $request)
+    {
+    	$input = $request->all();
+    	
+    	$category = $this->categoryModel->fill( $input );
+    	$category->save();
+    	
+    	return redirect('categories');
     }
 }
