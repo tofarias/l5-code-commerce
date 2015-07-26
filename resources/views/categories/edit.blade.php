@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="container">
-	<h1>Create Category</h1>
+	<h1>Edit Category: {!! $category->name !!}</h1>
 	
 	@if( $errors->any() )
 		<ul class="alert">
@@ -12,20 +12,20 @@
 		@endforeach
 		</ul>
 	@endif
-	{!! Form::open( ['route' => 'categories.store'] ) !!}
+	{!! Form::open( ['route' => ['categories.update', $category->id], 'method' => 'post'] ) !!}
 		
 		<div class="form-group">
 			{!! Form::label('name', 'Name:') !!}
-			{!! Form::text('name', null, ['class' => 'form-control']) !!}
+			{!! Form::text('name', $category->name, ['class' => 'form-control']) !!}
 		 </div>
 		 
 		 <div class="form-group">
 			{!! Form::label('description', 'Description:') !!}
-			{!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+			{!! Form::textarea('description', $category->description, ['class' => 'form-control']) !!}
 		 </div>
 		 
 		 <div class="form-group">
-		 {!! Form::submit('Add category,', ['class' => 'btn btn-primary form-control']) !!}
+		 {!! Form::submit('Save category', ['class' => 'btn btn-primary']) !!}
 		 </div>
 		
 	{!! Form::close() !!}
