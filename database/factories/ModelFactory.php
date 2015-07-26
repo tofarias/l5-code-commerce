@@ -25,6 +25,7 @@ $factory->define(Category::class, function($faker){
 	$factory->define(Product::class, function($faker){
 	
 		return[
+				'category_id' => $faker->numberBetween(1, 4),
 				'name' => $faker->name,
 				'description' => $faker->sentence,
 				'price' => $faker->randomFloat($nbMaxDecimals = 2, $min = 10, $max = 99),
