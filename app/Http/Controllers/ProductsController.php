@@ -12,6 +12,7 @@ use CodeCommerce\Category;
 use CodeCommerce\ProductImage;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use CodeCommerce\Http\Requests\ProductImageRequest;
 
 class ProductsController extends Controller
 {
@@ -80,7 +81,7 @@ private $model;
     	return view('products.create_image', compact('product'));
     }
     
-    public function storeImage(Request $request, $id, ProductImage $productImage)
+    public function storeImage(ProductImageRequest $request, $id, ProductImage $productImage)
     {
     	$file = $request->file('image');
     	$extension = $file->getClientOriginalExtension();
