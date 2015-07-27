@@ -20,8 +20,7 @@
 			<td>{{ $image->id }}</td>
 			<td><img src="{!! url('uploads/'.$image->id.'.'.$image->extension) !!}" width="100" height="100"></td>
 			<td>{{ $image->extension }}</td>
-			<td>				
-			</td>
+			<td><a href="{{ route('products.images.destroy', ['id' => $image->id]) }}">Delete</a></td>
 		</tr>
 		@endforeach
 		
