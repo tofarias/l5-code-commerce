@@ -16,7 +16,7 @@ use CodeCommerce\Http\Requests\ProductImageRequest;
 
 class ProductsController extends Controller
 {
-private $model;	
+	private $model;	
     
     public function __construct(Product $model)
     {
