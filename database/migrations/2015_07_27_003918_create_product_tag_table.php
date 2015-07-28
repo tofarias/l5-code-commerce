@@ -33,6 +33,6 @@ class CreateProductTagTable extends Migration
      */
     public function down()
     {
-        Schema::drop('products_tags');
+        Schema::drop('products_tag');
     }
 }
