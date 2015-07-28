@@ -14,6 +14,12 @@ class Product extends Model
 							'recommend'
 						];
 	
+	
+	public function scopeFeatured( $query )
+	{
+		return $query->where('featured', 1);
+	}
+	
 	public function images()
 	{
 		return $this->hasMany(ProductImage::class);
