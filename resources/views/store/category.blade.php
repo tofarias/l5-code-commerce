@@ -15,12 +15,7 @@
 
 
 
-        <div class="features_items"><!--recommended-->
-            <h2 class="title text-center">Recomendados</h2>
-
-            @include('store.partial.product', ['products' => $pRecommended ])
-		
-        </div><!--recommended-->
+       
 
     </div>
 @stop
