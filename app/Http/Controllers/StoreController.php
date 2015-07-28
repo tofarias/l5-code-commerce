@@ -24,9 +24,9 @@ class StoreController extends Controller
     public function category($id)
     {
     	$categories = Category::all();
-    	$category = Category::find();
+    	$category = Category::find($id);
     	
-    	$products = Product::ofCategories($id)->get();
+    	$products = Product::ofCategory( $id )->get();
     	
     	return view('store.category', compact('categories', 'products', 'category'));
     } 
