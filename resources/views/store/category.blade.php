@@ -1,17 +1,21 @@
-@extends('store.store')
 
-@section('categories')
-	@include('store.partial.categories')
-@stop
+<div class="col-sm-3">
+	<div class="left-sidebar">
+		<h2>Categorias</h2>
+		<div class="panel-group category-products" id="accordian">
 
-@section('content')
-<div class="col-sm-9 padding-right">
-        <div class="features_items">
-            <h2 class="title text-center">{{ $category->name }}</h2>
-            
-            @include('store.partial.product', ['products' => $products ])
+			@foreach( $categories as $category )
+			
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4 class="panel-title">
+						<a href="{{ route('store.category', ['id' => $category->id]) }}">{{ $category->name }}</a>
+					</h4>
+				</div>
+			</div>
+			
+			@endforeach
 
-        </div>
-
-    </div>
-@stop
+		</div>
+	</div>
+</div>
