@@ -38,6 +38,7 @@ Route::get('category/{id}', ['as' => 'store.category', 'uses' => 'StoreControlle
 Route::get('product/{id}', ['as' => 'store.product', 'uses' => 'StoreController@product']);
 Route::get('cart', ['as' => 'cart', 'uses' => 'CartController@index']);
 Route::get('cart/add/{id}', ['as' => 'cart.add', 'uses' => 'CartController@add']);
+Route::get('cart/destroy/{id}', ['as' => 'cart.destroy', 'uses' => 'CartController@destroy']);
 
 Route::get('home', 'HomeController@index');
 

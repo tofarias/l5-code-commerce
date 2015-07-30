@@ -49,7 +49,7 @@
 							</td>
 							
 							<td class="cart_delete">
-								<a href="#" class="cart_quantity_delete">Delete</a>
+								<a href="{{ route('cart.destroy', ['id' => $k]) }}" class="cart_quantity_delete">Delete</a>
 							</td>
 						</tr>
 					@endforeach
