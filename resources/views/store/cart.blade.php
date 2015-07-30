@@ -18,19 +18,21 @@
 							<td class="price">Price</td>
 							<td class="price">Qtd</td>
 							<td class="price">Total</td>
+							<td class="price">Delete</td>
 						</tr>
 					</thead>
 					<tbody>
 					@foreach($cart->all() as $k => $item)
+						
 						<tr>
 							<td class="cart_product">
-								<a href="">
+								<a href="{{ route('store.product', ['id' => $k]) }}">
 									Imagem
 								</a>
 							</td>
 							
 							<td class="cart_description">
-								<h4><a href="#">{{ $item['name'] }}</a></h4>
+								<h4><a href="{{ route('store.product', ['id' => $k]) }}">{{ $item['name'] }}</a></h4>
 								<p>Code: {{ $k }}</p>
 							</td>
 							

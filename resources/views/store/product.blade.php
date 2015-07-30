@@ -43,7 +43,7 @@
                 <p>{{ $product->description }}</p>
                                 <span>
                                     <span>$ {{ number_format($product->price, 2, ",", ".") }}</span>
-                                        <a href="#" class="btn btn-fefault cart">
+                                        <a href="{{ route('cart.add', ['id' => $product->id]) }}" class="btn btn-fefault cart">
                                             <i class="fa fa-shopping-cart"></i>Add to Cart
                                         </a>
                                 </span>

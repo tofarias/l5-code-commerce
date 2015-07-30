@@ -8,6 +8,7 @@ use CodeCommerce\Http\Requests;
 use CodeCommerce\Http\Controllers\Controller;
 use CodeCommerce\Cart;
 use Illuminate\Support\Facades\Session;
+use CodeCommerce\Product;
 
 class CartController extends Controller
 {
@@ -31,4 +32,24 @@ class CartController extends Controller
     	
     	return view('store.cart', ['cart' => Session::get('cart')]);
     }
+    
+    public function add($id)
+    {
+    	if( Session::has('cart') )
+    	{
+    		$cart = Session::get('cart');
+    	}else
+    	{
+    		$cart = $this->cart;
+    	}
+    	
+    	$product = Product::find($id);
+    	$cart->add($id, $product->name, $product->price);
+    	
+    	Session::set('cart', $cart);
+    	
+    	return redirect()->route('cart');
+    }
+    
+    
 }
