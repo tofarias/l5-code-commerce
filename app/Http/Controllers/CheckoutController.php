@@ -9,6 +9,7 @@ use CodeCommerce\Http\Controllers\Controller;
 use CodeCommerce\Order;
 use CodeCommerce\OrderItem;
 use Illuminate\Support\Facades\Session;
+use CodeCommerce\Category;
 
 
 class CheckoutController extends Controller
@@ -42,8 +43,17 @@ class CheckoutController extends Controller
 				    					'price' => $item['price'],
 				    					'qtd' => $item['qtd'],    					
 				    			] );
+    			
+    			
     		}
-    		dd( $order->items );
+    		
+    		$cart->clear();
+    		
+    		return view('store.checkout', compact('order'));
     	}
+    	
+    	$categories = Category::all();
+    	
+    	return view('store.checkout', ['cart' => 'empty', 'categories' => $categories]);
     }
 }
