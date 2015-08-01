@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-#use Illuminate\Database\Eloquent\Factory;
 use CodeCommerce\User;
 use CodeCommerce\Product;
 use CodeCommerce\Category;

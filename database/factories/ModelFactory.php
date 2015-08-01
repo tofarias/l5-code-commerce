@@ -6,8 +6,8 @@ use CodeCommerce\Category;
 
 $factory->define(User::class, function ($faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,    	
+        'name' => 'Tiago',
+        'email' => 'tiago.farias.poa@gmail.com',    	
         'password' => Hash::make('123456'),
         'remember_token' => str_random(10),
     ];

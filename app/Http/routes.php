@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'admin', 'where' => ['id' => '[0-9]+']], function()
+Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'where' => ['id' => '[0-9]+']], function()
 {
 	Route::group(['prefix' => 'categories', 'where' => ['id' => '[0-9]+']], function()
 	{
