@@ -1,8 +1,6 @@
 @extends('store.store')
 
-@section('categories')
-	@include('store.partial.categories', ['categories' => $categories])
-@stop
+
 
 @section('content')
 

@@ -49,7 +49,7 @@ class CheckoutController extends Controller
     		
     		$cart->clear();
     		
-    		return view('store.checkout', compact('order'));
+    		return view('store.checkout', compact('order', 'cart'));
     	}
     	
     	$categories = Category::all();
