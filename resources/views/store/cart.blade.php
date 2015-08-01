@@ -67,11 +67,11 @@
 					<tr class="cart_menu">
 						<td colspan="6">
 							<div class="pull-right">
-								<span style="margin-right: 130px">
+								<span style="margin-right: 100px">
 									TOTAL: {{ $cart->getTotal() }}
 								</span>
 								
-								<a href="#" class="btn btn-success">Fechar a conta</a>
+								<a href="{{ route('checkout.place') }}" class="btn btn-success">Fechar a conta</a>
 								
 							</div>
 						</td>

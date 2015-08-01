@@ -30,7 +30,7 @@ class CheckoutController extends Controller
     	if( $cart->getTotal() > 0 )
     	{
     		$order = $orderModel->create([
-    								'user_id' => Auth::user()->id,
+    								'user_id' => \Auth::user()->id,
     								'total' => $cart->getTotal(),
     								]);
     		
@@ -45,6 +45,5 @@ class CheckoutController extends Controller
     		}
     		dd( $order->items );
     	}
-    	dd('Fim');
     }
 }
