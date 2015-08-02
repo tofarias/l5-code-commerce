@@ -10,15 +10,11 @@ use CodeCommerce\Order;
 use CodeCommerce\OrderItem;
 use Illuminate\Support\Facades\Session;
 use CodeCommerce\Category;
+use CodeCommerce\Events\CheckoutEvent;
 
 
 class CheckoutController extends Controller
 {
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
-	
     public function place(Order $orderModel, OrderItem $orderItem)
     {
     	if( !Session::has('cart') )
@@ -48,6 +44,7 @@ class CheckoutController extends Controller
     		}
     		
     		$cart->clear();
+    		event(new CheckoutEvent());
     		
     		return view('store.checkout', compact('order', 'cart'));
     	}
