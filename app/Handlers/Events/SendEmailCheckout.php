@@ -27,12 +27,10 @@ class SendEmailCheckout
      */
     public function handle(CheckoutEvent $event)
     {
-    	echo 'tentando enviar e-amil';
         Mail::send('emails.emailcheckout', [], function ($message) {
 		    $message->from('us@example.com', 'Laravel');
 		
 		    $message->to('foo@example.com')->cc('bar@example.com');
 		});
-        echo 'Enviou E-mail';
     }
 }
